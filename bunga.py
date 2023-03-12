@@ -3,9 +3,8 @@ import streamlit as st
 import tkinter
 import tkinter.messagebox
 
-def main():
-    st.header('Hadiah buat pams dari Hals :bouquet:')
-    def draw():
+st.header('Hadiah buat pams dari Hals :bouquet:')
+def draw():
         window = tkinter.Tk()
         canvas = tkinter.Canvas(master = window, width = 800, height = 800)
         canvas.grid(padx=2, pady=2, row=0, column=0, rowspan=10, columnspan=10) # , sticky='nsew')
@@ -95,21 +94,10 @@ def main():
         t.right (90)
         t.circle (200,60)
         window.mainloop()
+    
+clicked = st.button('coba klik ini')
 
-    clicked = st.button('coba klik ini')
-
-    if clicked:
-        draw()
-        
-    else:
-        st.write('Makasi yaa byy, aku beruntung punya kamu')
-
-main()
-
-
-
-
-
-
-
-
+if clicked:
+    draw()
+else:
+    st.write('Makasi yaa byy, aku beruntung punya kamu')
