@@ -1,6 +1,12 @@
 import streamlit as st
 import turtle
 
+host=st.secrets.db_credentials.host,
+user=st.secrets.db_credentials.user,
+password=st.secrets.db_credentials.password,
+db=st.secrets.db_credentials.database
+
+
 st.header('Hadiah buat pams dari Hals :bouquet:')
 def main():
    # Set initial position
