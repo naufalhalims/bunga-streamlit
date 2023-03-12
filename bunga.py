@@ -1,7 +1,5 @@
 import turtle
 import streamlit as st
-from turtle import Turtle
-import pyautogui 
 import tkinter
 import tkinter.messagebox
 
@@ -106,11 +104,7 @@ def main():
     else:
         st.write('Makasi yaa byy, aku beruntung punya kamu')
 
-try:
-    main()
-    
-except:
-    pyautogui.hotkey("ctrl","F5")
+main()
 
 
 
