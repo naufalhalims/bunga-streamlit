@@ -2,11 +2,16 @@ import turtle
 import streamlit as st
 from turtle import Turtle
 import pyautogui 
+import tkinter
+import tkinter.messagebox
 
 def main():
     st.header('Hadiah buat pams dari Hals :bouquet:')
     def draw():
-        t = Turtle()
+        window = tkinter.Tk()
+        canvas = tkinter.Canvas(master = window, width = 800, height = 800)
+        canvas.grid(padx=2, pady=2, row=0, column=0, rowspan=10, columnspan=10) # , sticky='nsew')
+        t = turtle.RawTurtle(canvas)
         # Set initial position
         t.penup ()
         t.left (90)
@@ -91,7 +96,7 @@ def main():
         t.fd (60)
         t.right (90)
         t.circle (200,60)
-        turtle.done()
+        window.mainloop()
 
     clicked = st.button('coba klik ini')
 
@@ -103,6 +108,7 @@ def main():
 
 try:
     main()
+    
 except:
     pyautogui.hotkey("ctrl","F5")
 
