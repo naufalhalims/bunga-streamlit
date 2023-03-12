@@ -1,104 +1,115 @@
-import streamlit as st
 import turtle
+import streamlit as st
+from turtle import Turtle
+import pyautogui 
 
-host=st.secrets.db_credentials.host,
-user=st.secrets.db_credentials.user,
-password=st.secrets.db_credentials.password,
-db=st.secrets.db_credentials.database
-
-
-st.header('Hadiah buat pams dari Hals :bouquet:')
 def main():
-   # Set initial position
-   turtle.penup ()
-   turtle.left (90)
-   turtle.fd (200)
-   turtle.pendown ()
-   turtle.right (90)
+    st.header('Hadiah buat pams dari Hals :bouquet:')
+    def draw():
+        t = Turtle()
+        # Set initial position
+        t.penup ()
+        t.left (90)
+        t.fd (200)
+        t.pendown ()
+        t.right (90)
 
-   # flower base
-   turtle.fillcolor ("red")
-   turtle.begin_fill ()
-   turtle.circle (10,180)
-   turtle.circle (25,110)
-   turtle.left (50)
-   turtle.circle (60,45)
-   turtle.circle (20,170)
-   turtle.right (24)
-   turtle.fd (30)
-   turtle.left (10)
-   turtle.circle (30,110)
-   turtle.fd (20)
-   turtle.left (40)
-   turtle.circle (90,70)
-   turtle.circle (30,150)
-   turtle.right (30)
-   turtle.fd (15)
-   turtle.circle (80,90)
-   turtle.left (15)
-   turtle.fd (45)
-   turtle.right (165)
-   turtle.fd (20)
-   turtle.left (155)
-   turtle.circle (150,80)
-   turtle.left (50)
-   turtle.circle (150,90)
-   turtle.end_fill ()
+        # flower base
+        t.fillcolor ("red")
+        t.begin_fill ()
+        t.circle (10,180)
+        t.circle (25,110)
+        t.left (50)
+        t.circle (60,45)
+        t.circle (20,170)
+        t.right (24)
+        t.fd (30)
+        t.left (10)
+        t.circle (30,110)
+        t.fd (20)
+        t.left (40)
+        t.circle (90,70)
+        t.circle (30,150)
+        t.right (30)
+        t.fd (15)
+        t.circle (80,90)
+        t.left (15)
+        t.fd (45)
+        t.right (165)
+        t.fd (20)
+        t.left (155)
+        t.circle (150,80)
+        t.left (50)
+        t.circle (150,90)
+        t.end_fill ()
 
-   # Petal 1
-   turtle.left (150)
-   turtle.circle (-90,70)
-   turtle.left (20)
-   turtle.circle (75,105)
-   turtle.setheading (60)
-   turtle.circle (80,98)
-   turtle.circle (-90,40)
+        # Petal 1
+        t.left (150)
+        t.circle (-90,70)
+        t.left (20)
+        t.circle (75,105)
+        t.setheading (60)
+        t.circle (80,98)
+        t.circle (-90,40)
 
-   # Petal 2
-   turtle.left (180)
-   turtle.circle (90,40)
-   turtle.circle (-80,98)
-   turtle.setheading (-83)
+        # Petal 2
+        t.left (180)
+        t.circle (90,40)
+        t.circle (-80,98)
+        t.setheading (-83)
 
-   # Leaves 1
-   turtle.fd (30)
-   turtle.left (90)
-   turtle.fd (25)
-   turtle.left (45)
-   turtle.fillcolor ("green")
-   turtle.begin_fill ()
-   turtle.circle (-80,90)
-   turtle.right (90)
-   turtle.circle (-80,90)
-   turtle.end_fill ()
-   turtle.right (135)
-   turtle.fd (60)
-   turtle.left (180)
-   turtle.fd (85)
-   turtle.left (90)
-   turtle.fd (80)
+        # Leaves 1
+        t.fd (30)
+        t.left (90)
+        t.fd (25)
+        t.left (45)
+        t.fillcolor ("green")
+        t.begin_fill ()
+        t.circle (-80,90)
+        t.right (90)
+        t.circle (-80,90)
+        t.end_fill ()
+        t.right (135)
+        t.fd (60)
+        t.left (180)
+        t.fd (85)
+        t.left (90)
+        t.fd (80)
 
-   # Leaves 2
-   turtle.right (90)
-   turtle.right (45)
-   turtle.fillcolor ("green")
-   turtle.begin_fill ()
-   turtle.circle (80,90)
-   turtle.left (90)
-   turtle.circle (80,90)
-   turtle.end_fill ()
-   turtle.left (135)
-   turtle.fd (60)
-   turtle.left (180)
-   turtle.fd (60)
-   turtle.right (90)
-   turtle.circle (200,60)
-   turtle.done()
-   
+        # Leaves 2
+        t.right (90)
+        t.right (45)
+        t.fillcolor ("green")
+        t.begin_fill ()
+        t.circle (80,90)
+        t.left (90)
+        t.circle (80,90)
+        t.end_fill ()
+        t.left (135)
+        t.fd (60)
+        t.left (180)
+        t.fd (60)
+        t.right (90)
+        t.circle (200,60)
+        turtle.done()
 
-if st.button('coba klik ini'):
-    st.write('ini buat kamu by')
+    clicked = st.button('coba klik ini')
+
+    if clicked:
+        draw()
+        
+    else:
+        st.write('Makasi yaa byy, aku beruntung punya kamu')
+
+try:
     main()
-else:
-    st.write('Makasi yaa byy, aku beruntung punya kamu')
+except:
+    pyautogui.hotkey("ctrl","F5")
+
+
+
+
+
+
+
 
